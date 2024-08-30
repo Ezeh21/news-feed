@@ -2,10 +2,17 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules:['@nuxtjs/color-mode', '@nuxtjs/tailwindcss'],
+  modules:[
+    '@nuxtjs/color-mode',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts'
+  ],
+
   colorMode:{
-    classSuffix:""
+    classSuffix:"",
+    preference: 'light'
   },
+
   tailwindcss: {
     cssPath:"~/assets/css/tailwind.css",
     configPath: 'tailwind.config.js',
@@ -13,5 +20,14 @@ export default defineNuxtConfig({
     config:{},
     injectPosition:0,
     viewer:true
+  },
+  googleFonts: {
+    families: {
+      Roboto: true,
+      'Work+Sans': [300, 400, 600],
+    },
+    display: 'swap',
+    prefetch: true,
+    preload: true,
   }
 })

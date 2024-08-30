@@ -1,0 +1,11 @@
+.main {
+    margin-inline: 24px;
+    max-width: 1300px;
+}
+
+
+@media screen and (min-width: 1320px) {
+    .main {
+        margin-inline: auto;
+    }
+}
