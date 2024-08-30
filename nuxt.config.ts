@@ -29,5 +29,8 @@ export default defineNuxtConfig({
     display: 'swap',
     prefetch: true,
     preload: true,
+  },
+  runtimeConfig:{
+    apiKey:process.env.API_KEY
   }
 })

@@ -1,7 +1,12 @@
 <script setup>
 import Hero from './Hero.vue';
+import Articles from './Articles.vue';
 </script>
+
+
 <template>
-    <Hero />
-    <h1>Home</h1>
+    <main>
+        <Hero />
+        <Articles />
+    </main>
 </template>
