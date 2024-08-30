@@ -5,12 +5,6 @@ import "../assets/css/index.css"
 
 <template>
     <Container>
-        <div>
-            <Card />
-        </div>
+        <Home />
     </Container>
 </template>
-
-<script>
-
-</script>

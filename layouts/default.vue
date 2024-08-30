@@ -1,4 +1,7 @@
 <template>
-    <Navigation />
-    <slot />
+    <main class=" min-h-[100vh]">
+        <Navigation />
+        <slot />
+        <Footer />
+    </main>
 </template>
