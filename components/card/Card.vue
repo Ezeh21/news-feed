@@ -19,7 +19,6 @@ const navigateToDetails = () => {
     });
 };
 
-console.log(article);
 
 </script>
 

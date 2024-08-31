@@ -1,7 +1,11 @@
 <template>
     <footer class=" sticky top-[100%] py-9 bg-[#E8E8EA] dark:bg-[#242535]">
         <Container>
-            <p>Footer</p>
+            <section class=" text-center w-full">
+                <NuxtLink to="https://github.com/Ezeh21/news-feed" target="_blank" class=" text-2xl font-bold">
+                    view repo
+                </NuxtLink>
+            </section>
         </Container>
     </footer>
 </template>
