@@ -18,6 +18,7 @@ const queryText = ref('')
 
 const searchArticle = () => {
     router.push(`/search/${queryText.value}`)
+    queryText.value = ''
 }
 </script>
 
