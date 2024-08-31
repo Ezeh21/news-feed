@@ -5,7 +5,7 @@ export default defineEventHandler(async () => {
 		);
 		const data = await response.json();
 		if (!response.ok) {
-			return { error: response.statusText, status: response.status };
+			return { error: data?.message, status: response.status };
 		}
 		return { data, status: response.status };
 	} catch (error) {
