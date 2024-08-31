@@ -5,7 +5,6 @@ const articles = computed(() => {
     if (data.value?.status === 200) {
         return data.value?.data?.articles || [];
     }
-
 })
 
 </script>
@@ -13,7 +12,7 @@ const articles = computed(() => {
 
 <template>
     <main class="card-grid mb-[10rem]">
-        <div v-for="article in articles.slice(0, 12)" :key="article?.title">
+        <div v-for="article in articles" :key="article?.title">
             <Card :article="article" />
         </div>
     </main>
