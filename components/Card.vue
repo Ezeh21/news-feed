@@ -18,8 +18,6 @@ const navigateToDetails = () => {
         }
     });
 };
-
-
 </script>
 
 <template>
