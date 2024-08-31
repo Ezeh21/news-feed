@@ -2,7 +2,6 @@
 import { loadingDark, loadingLight } from '~/assets/icons';
 const { query } = useRoute().params
 const theme = useColorMode()
-
 const { data, status } = useFetch(`/api/search/${query}`)
 
 const articles = computed(() => {

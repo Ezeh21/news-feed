@@ -14,6 +14,7 @@ defineProps({
 })
 </script>
 
+
 <template>
     <main v-if="open" :class="`${styles.main}`">
         <section :class="`${styles.modalContainer}`">

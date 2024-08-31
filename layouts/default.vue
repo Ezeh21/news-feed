@@ -5,6 +5,7 @@ import { useToggle } from '~/assets/composables/useToggle';
 const { isToggled, toggle, handleLogin, isAuth } = useToggle()
 </script>
 
+
 <template>
     <main class=" min-h-[100vh]">
         <Navigation />

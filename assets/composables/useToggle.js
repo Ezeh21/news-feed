@@ -6,6 +6,7 @@ export const useToggle = () => {
 		isToggled.value = !isToggled.value;
 	};
 
+  
 	const handleLogin = () => {
 		isAuth.value = !isAuth.value;
 		toggle();
