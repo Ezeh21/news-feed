@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { theme_icn, logo, search } from '~/assets/icons';
 import "../assets/css/index.css"
+import { useToggle } from '~/assets/composables/useToggle';
 
 const currentTheme = ref('')
 const colorMode = useColorMode();
@@ -20,6 +21,8 @@ const searchArticle = () => {
     router.push(`/search/${queryText.value}`)
     queryText.value = ''
 }
+
+const { toggle, isToggled, isAuth } = useToggle()
 </script>
 
 <template>
@@ -36,12 +39,13 @@ const searchArticle = () => {
 
                 <section class=" flex items-center gap-10">
                     <form @submit.prevent="searchArticle()"
-                        class=" flex items-center w-[150px] gap-2 bg-[#F4F4F5] dark:bg-[#242535] py-[8px] px-[8px] rounded-[5px]">
+                        class=" flex items-center w-[150px] gap-2 bg-[#F4F4F5] dark:bg-[#242535]  p-[8px] rounded-[5px]">
                         <input v-model="queryText" type="text" placeholder="Search" class=" px-[10px] w-full">
                         <button>
                             <img :src="search" alt="search" class=" w-7 h-7 cursor-pointer">
                         </button>
                     </form>
+                    <button class=" bg-[#4B6BFB] text-white py-[9px] px-[10px] rounded-[5px]" @click="toggle">{{ isAuth ? "Sign out" : "Sign in" }}</button>
                     <div @click="selectColorTheme($colorMode.preference === 'dark' ? 'light' : 'dark')"
                         :class="` cursor-pointer relative w-12 h-7 rounded-[100px] bg-[#E8E8EA] dark:bg-[#4B6BFB]`">
                         <img :src="theme_icn" alt="icn"

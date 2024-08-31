@@ -1,0 +1,51 @@
+.main {
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  background: #000000a6;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+}
+
+.modalContainer {
+
+  height: 100%;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  transition: all 600ms ease-in-out;
+  opacity: 1;
+  width: 100%;
+  height: max-content;
+  border-radius: 5px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+
+  transition: all 6000ms ease-in-out;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+@media screen and (min-width: 550px) {
+ .modalContainer,.modalContent{
+  width: 500px;
+ }
+}
