@@ -17,7 +17,7 @@ const handleBadRequest = async () => {
 
         const clear = setTimeout(() => {
             errMsg.value = ""
-        }, 2000)
+        }, 3500)
         return () => clearTimeout(clear)
     }
 }
