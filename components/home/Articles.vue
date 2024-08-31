@@ -1,10 +1,13 @@
 <script setup>
 import { loadingDark, loadingLight } from '~/assets/icons';
-const { data, status } = await useFetch("/api/articles")
 const theme = useColorMode()
-
 const errMsg = ref("")
 const errStatus = ref("")
+
+
+const { data, status } = await useFetch("/api/articles")
+
+
 const articles = computed(() => {
     if (data.value?.status === 200) {
         return data.value?.data?.articles || [];

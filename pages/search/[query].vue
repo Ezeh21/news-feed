@@ -1,6 +1,5 @@
 <script setup>
 import { loadingDark, loadingLight } from '~/assets/icons';
-
 const { query } = useRoute().params
 const theme = useColorMode()
 
@@ -11,7 +10,6 @@ const articles = computed(() => {
         return data.value?.data?.articles || [];
     }
 })
-
 </script>
 
 <template>
