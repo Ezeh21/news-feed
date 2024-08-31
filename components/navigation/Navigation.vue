@@ -5,7 +5,7 @@ import "../assets/css/index.css"
 const currentTheme = ref('')
 const colorMode = useColorMode();
 
-
+const router = useRouter();
 const selectColorTheme = (theme: string) => {
     useColorMode().preference = theme
     currentTheme.value = colorMode.preference
@@ -14,6 +14,11 @@ const selectColorTheme = (theme: string) => {
 onMounted(() => {
     currentTheme.value = colorMode.preference
 })
+const queryText = ref('')
+
+const searchArticle = () => {
+    router.push(`/search/${queryText.value}`)
+}
 </script>
 
 <template>
@@ -29,11 +34,13 @@ onMounted(() => {
                 </ul> -->
 
                 <section class=" flex items-center gap-10">
-                    <div
+                    <form @submit.prevent="searchArticle()"
                         class=" flex items-center w-[150px] gap-2 bg-[#F4F4F5] dark:bg-[#242535] py-[8px] px-[8px] rounded-[5px]">
-                        <input type="text" placeholder="Search" class=" px-[10px] w-full">
-                        <img :src="search" alt="search" class=" w-5 h-5 cursor-pointer">
-                    </div>
+                        <input v-model="queryText" type="text" placeholder="Search" class=" px-[10px] w-full">
+                        <button>
+                            <img :src="search" alt="search" class=" w-7 h-7 cursor-pointer">
+                        </button>
+                    </form>
                     <div @click="selectColorTheme($colorMode.preference === 'dark' ? 'light' : 'dark')"
                         :class="` cursor-pointer relative w-12 h-7 rounded-[100px] bg-[#E8E8EA] dark:bg-[#4B6BFB]`">
                         <img :src="theme_icn" alt="icn"
