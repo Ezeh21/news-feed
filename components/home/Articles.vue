@@ -12,6 +12,7 @@ const articles = computed(() => {
 })
 
 const handleBadRequest = async () => {
+    errStatus.value = "loading"
     const { data, status } = await useFetch('/api/badcall')
     errStatus.value = status.value
     if (data?.status !== 200) {
@@ -31,8 +32,8 @@ const handleBadRequest = async () => {
         <div class=" mb-7 flex flex-wrap gap-4 items-center justify-between">
             <p class=" text-lg font-semibold">Latest Post</p>
             <button @click="handleBadRequest" class=" bg-red-600 text-white  p-2 rounded">Make bad call</button>
-
         </div>
+        <p v-if="errStatus === 'loading'">Please wait...</p>
         <p class=" mb-7">{{ errMsg }}</p>
         <div v-if="status === 'pending'" class=" flex justify-center min-h-[60vh]">
             <img v-if="theme.value === 'dark'" :src="loadingDark" alt="">
