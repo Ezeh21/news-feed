@@ -4,6 +4,7 @@ const { data, status } = await useFetch("/api/articles")
 const theme = useColorMode()
 
 const errMsg = ref("")
+const errStatus = ref("")
 const articles = computed(() => {
     if (data.value?.status === 200) {
         return data.value?.data?.articles || [];
@@ -11,9 +12,10 @@ const articles = computed(() => {
 })
 
 const handleBadRequest = async () => {
-    const { error } = await useFetch("https://newsapi.org/v2/sources?apiKey")
-    if (error) {
-        errMsg.value = error?.value?.data?.message
+    const { data, status } = await useFetch('/api/badcall')
+    errStatus.value = status.value
+    if (data?.status !== 200) {
+        errMsg.value = data?.value?.error
 
         const clear = setTimeout(() => {
             errMsg.value = ""
