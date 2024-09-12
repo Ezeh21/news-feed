@@ -37,7 +37,7 @@ const { toggle, isToggled, isAuth } = useToggle()
                     <NuxtLink to="/" class=" text-[16px]">Home</NuxtLink>
                 </ul> -->
 
-                <section class=" flex items-center gap-10">
+                <section class=" flex flex-wrap items-center gap-10">
                     <form @submit.prevent="searchArticle()"
                         class=" flex items-center w-[150px] gap-2 bg-[#F4F4F5] dark:bg-[#242535]  p-[8px] rounded-[5px]">
                         <input v-model="queryText" type="text" placeholder="Search" class=" px-[10px] w-full">

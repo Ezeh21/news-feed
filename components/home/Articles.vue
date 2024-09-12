@@ -25,6 +25,8 @@ const handleBadRequest = async () => {
         return () => clearTimeout(clear)
     }
 }
+
+console.log(articles, 'lo');
 </script>
 
 

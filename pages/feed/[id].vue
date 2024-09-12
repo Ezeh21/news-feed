@@ -1,5 +1,5 @@
 <script setup>
-import { jason, hero_img } from '~/assets/imgs';
+import { no_img } from '~/assets/imgs';
 import { formatDate } from '~/assets/utils/formatDate';
 const route = useRoute();
 
@@ -24,13 +24,12 @@ const article = ref({
                     article?.title }}</p>
                 <section class="flex items-center gap-4 font-medium mt-2">
                     <div class="flex items-center gap-3">
-                        <img :src="jason" alt="">
                         <p class=" opacity-70">{{ article?.author ?? "Jason brown" }}</p>
                     </div>
-                    <p class="opacity-70">{{ formatDate(article?.publishedAt) ?? "August 20, 2022" }}
+                    <p class="opacity-70">{{  "August 20, 2022" }}
                     </p>
                 </section>
-                <img :src="article?.urlToImage ?? hero_img" alt="img" class="mt-[32px] rounded-[12px]">
+                <img :src="article?.urlToImage ?? no_img" alt="img" class="mt-[32px] rounded-[12px]">
             </section>
 
             <p class="mb-[10rem] mt-[4rem]">{{ article?.content }}</p>
