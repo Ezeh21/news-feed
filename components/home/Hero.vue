@@ -21,7 +21,8 @@ const navigateToDetails = () => {
                 urlToImage: article.value.urlToImage,
                 author: article.value.author,
                 publishedAt: article.value.publishedAt ? new Date(article.value.publishedAt).toISOString() : null,
-                content: article.value.description
+                content: article.value.description,
+                source: article.value.source?.name
             }
         });
     }

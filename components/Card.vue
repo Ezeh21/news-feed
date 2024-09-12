@@ -13,7 +13,8 @@ const navigateToDetails = () => {
             urlToImage: article?.urlToImage,
             author: article?.author,
             publishedAt: article?.publishedAt,
-            content: article?.description
+            content: article?.description,
+            source: article?.source?.name
         }
     });
 };
