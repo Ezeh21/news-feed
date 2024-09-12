@@ -29,7 +29,7 @@ const navigateToDetails = () => {
    
 };
 
-console.log(article.value, 'luio');
+
 </script>
 <template>
 
@@ -38,7 +38,7 @@ console.log(article.value, 'luio');
             " alt="" class=" object-cover  w-full h-[400px]  sm:h-[600px]  rounded-[10px]">
         <div class=" shadow flex flex-col max-w-[350px] sm:max-w-[600px] gap-4 absolute bottom-[2rem] md:bottom-[-4rem] md:left-[5%] p-[20px] md:p-[40px] rounded-[12px] md:bg-[#fff] 
             md:border md:border-[#E8E8EA] md:dark:bg-[#181A2A] md:dark:border-[#242535]">
-            <p class=" text-sm bg-[#4B6BFB]  text-[#fff] w-max py-[4px] px-[10px] rounded-[6px]">Technology</p>
+            <p class=" text-sm bg-[#4B6BFB]  text-[#fff] w-max py-[4px] px-[10px] rounded-[6px]">{{ article?.source?.name ?? "Technology" }}</p>
             <p class=" text-[18px] sm:text-4xl font-semibold text-white md:text-[initial] dark:md:text-[#fff]">{{
                 truncateText(article?.title, 65)
             }}

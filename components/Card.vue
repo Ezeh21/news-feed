@@ -17,14 +17,16 @@ const navigateToDetails = () => {
         }
     });
 };
+
 </script>
 
 <template>
     <NuxtLink :to="{ path: `/feed/${article.title.toLowerCase().replace(/\s+/g, '-')}`, query: { id: article?.id } }"
         @click="navigateToDetails">
         <div @click="navigateToDetails"
-            class=" flex flex-col gap-4 max-w-[100%] h-[100%] bg-[#FFFFFF] dark:bg-[#181A2A] border border-[#E8E8EA] dark:border-[#242535] p-4 rounded-xl">
+            class=" flex flex-col gap-[1.45rem] max-w-[100%] h-[100%] bg-[#FFFFFF] dark:bg-[#181A2A] border border-[#E8E8EA] dark:border-[#242535] p-4 rounded-xl">
             <img :src="article?.urlToImage ?? no_img" alt="" class=" h-[240px] rounded-xl object-cover">
+            <p class=" text-[14px] py-[4px] px-[10px] rounded-md bg-[#4B6BFB0D] w-max text-[#4B6BFB]">{{ article?.source?.name ??  "Technology"}}</p>
             <p class=" text-[18px] text-[#181A2A] dark:text-[#FFFFFF] font-semibold">{{ truncateText(article?.title, 25)
                 }}</p>
                  <p class=" text-[13px] text-[#181A2A] dark:text-[#FFFFFF] font-medium italic opacity-[.75]">{{ truncateText(article?.description, 50)
